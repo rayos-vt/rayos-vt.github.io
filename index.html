@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>G&F 100 Stock Market Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/style.css" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
+    <script src="scripts/main.js" async></script>
+  </head>
+  <body>
+    <main>
+      <div id="left-side">
+        <div id="main-title">
+          <div id="icon">icon</div>
+          <h1>G&F 100 Stock Market Dashboard</h1>
+        </div>
+        <div id="sub-title">
+          <div id="date-range">date range</div>
+          <div id="last-price-date">last price date</div>
+          <div id="details">details</div>
+        </div>
+        <table id="stock-index">stock index</table>
+        <table id="stock-table">stock table</table>
+      </div>
+      <div id="right-side">
+        <div id="moving-average-group">
+          <div id="moving-average-title">
+            <h3>Stock Price Moving Average Trend By Date</h3>
+            <div>Currently showing -</div>
+            <div id="ticker-symbol">HKR</div>
+          </div>
+          <div id="moving-averages">
+            <div>
+              <div class="moving-average">Stocks Prices</div>
+              <div class="moving-average">30D MA</div>
+              <div class="moving-average">90D MA</div>
+            </div>
+          </div>
+          <div id="trading-volumes">
+            <div class="trading-volume">Trading Volume</div>
+            <div class="trading-volume">Previous Volume High</div>
+          </div>
+        </div>
+        <div id="top-worst">
+          <h3>Top and Worst 3 Performing Stock</h3>
+          <div id="day-averages">
+            <div class="day-average">
+              <h3>Last 30 Days</h3>
+            </div>
+            <div class="day-average">
+              <h3>Last 7 Days</h3>
+            </div>
+            <div class="day-average">
+              <h3>Selected Days</h3>
+            </div>
+          </div>
+        </div>
+        <footer id="created-by">
+          <h3>Created by : KhaosSquared</h3>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>

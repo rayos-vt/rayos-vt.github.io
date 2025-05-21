@@ -1,0 +1,50 @@
+html {
+    background-color: rgba(220, 20, 60, 0.699);
+  }
+main {
+    display: grid;
+    height: 99vh;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+#left-side {
+    display: grid;
+    grid-template-rows: .9fr .8fr 1.5fr 5fr;
+    background-color: blue;
+  }
+#right-side {
+    display: grid;
+    grid-template-rows: 3fr 1.75fr;
+    gap: 10px;
+  }
+#main-title {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    background-color: rgb(101, 101, 245);
+  }
+#sub-title {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(163, 101, 245);
+  }
+#stock-index {
+    background-color: rgb(101, 151, 245);
+  }
+#stock-table {
+    background-color: rgb(80, 78, 245);
+  }
+#moving-average-group {
+    /* height: 70%; */
+    background-color: green;
+  }
+#top-worst {
+    background-color: yellow;
+  }
+#day-averages {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgb(200, 255, 0);
+  }
+footer {
+    background-color: red;
+  }
