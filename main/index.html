@@ -5,46 +5,80 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="styles/style.css" rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> -->
+    <link href="styles/date-range-slider.css" rel="stylesheet">
     <script src="scripts/main.js" async></script>
+    <script src="scripts/date-range-slider.js" async></script>
   </head>
   <body>
     <main>
       <div id="left-side">
         <div id="main-title">
-          <div id="icon">icon</div>
+          <img id="main-icon" class="icon" src="images/statistics-icon.png" alt="">
           <h1>G&F 100 Stock Market Dashboard</h1>
         </div>
         <div id="sub-title">
-          <div id="date-range">date range</div>
-          <div id="last-price-date">last price date</div>
-          <div id="details">details</div>
-        </div>
-        <table id="stock-index">stock index</table>
-        <table id="stock-table">stock table</table>
-      </div>
-      <div id="right-side">
-        <div id="moving-average-group">
-          <div id="moving-average-title">
-            <h3>Stock Price Moving Average Trend By Date</h3>
-            <div>Currently showing -</div>
-            <div id="ticker-symbol">HKR</div>
-          </div>
-          <div id="moving-averages">
-            <div>
-              <div class="moving-average">Stocks Prices</div>
-              <div class="moving-average">30D MA</div>
-              <div class="moving-average">90D MA</div>
+          <div id="date-range">
+            <label for="start-date"></label>
+            <input type="date" id="start-date" name="start-date" value="2019-12-26">
+            <label for="end-date"></label>
+            <input type="date" id="end-date" name="end-date" value="2025-01-01">
+            <div class="range_container">
+                <div class="sliders_control">
+                    <input id="fromSlider" type="range" value="0" min="0" max="100"/>
+                    <input id="toSlider" type="range" value="100" min="0" max="100"/>
+                </div>
             </div>
           </div>
-          <div id="trading-volumes">
-            <div class="trading-volume">Trading Volume</div>
-            <div class="trading-volume">Previous Volume High</div>
+          <div>
+            <div id="last-price-date">
+                <h3>Last Price Date -</h3>
+                <h2 style="font-family: wf_standard-font, helvetica, arial, sans-serif;">8/26/2020</h2>
+            </div>
+            <div id="details">Select the stock code for price/volume visual</div>
+          </div>
+        </div>
+        <div id="stock-index">
+          <table>stock index</table>
+        </div>
+        <div id="stock-table">
+          <table>stock table</table>
+        </div>
+      </div>
+      <div id="right-side">
+        <div id="moving-averages">
+          <div id="moving-average-title">
+            <h3>Stock Price Moving Average Trend By Date</h3>
+            <div id="ticker-group">
+              Currently showing - <span id="ticker-symbol">HKR</span>
+            </div>
+          </div>
+          <div id="moving-average-group">
+            <div id="moving-average-subtitle">
+              <div class="moving-average">
+                <span class="circle"></span> Stocks Prices
+              </div>
+              <div class="moving-average">
+                <span class="circle"></span> 30D MA
+              </div>
+              <div class="moving-average">
+                <span class="circle"></span> 90D MA
+              </div>
+            </div>
+          </div>
+          <div id="trading-volume-group">
+            <div id="trading-volume-title">
+              <div class="trading-volume">
+                <span class="circle"></span> Trading Volume
+              </div>
+              <div class="trading-volume">
+                <span class="circle"></span> Previous Volume High
+              </div>
+            </div>
           </div>
         </div>
         <div id="top-worst">
           <h3>Top and Worst 3 Performing Stock</h3>
-          <div id="day-averages">
+          <div id="day-average-group">
             <div class="day-average">
               <h3>Last 30 Days</h3>
             </div>
@@ -57,7 +91,21 @@
           </div>
         </div>
         <footer id="created-by">
-          <h3>Created by : KhaosSquared</h3>
+          <div>
+            <h2>Created by : KhaosSquared</h2>
+          </div>
+          <div id="social-media">
+            Follow us on:-
+            <a href="https://www.youtube.com/@khaossquared3463">
+              <img class="icon" src="images/youtube-icon.png"  alt="">
+            </a>
+            <a href="https://x.com/KontrolledK1">
+              <img class="icon" src="images/twitter-icon.png"  alt="">
+            </a>
+            <a href="https://discord.gg/XvAJquafDj">
+              <img class="icon" src="images/discord-icon.png"  alt="">
+            </a>
+          </div>
         </footer>
       </div>
     </main>
