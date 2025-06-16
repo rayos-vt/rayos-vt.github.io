@@ -1,50 +1,202 @@
 html {
-    background-color: rgba(220, 20, 60, 0.699);
-  }
+  background-color: #ff6a83;
+  font-family: "Segoe UI", wf_segoe-ui_normal, helvetica, arial, sans-serif;
+}
+
 main {
-    display: grid;
-    height: 99vh;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-#left-side {
-    display: grid;
-    grid-template-rows: .9fr .8fr 1.5fr 5fr;
-    background-color: blue;
-  }
-#right-side {
-    display: grid;
-    grid-template-rows: 3fr 1.75fr;
-    gap: 10px;
-  }
-#main-title {
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    background-color: rgb(101, 101, 245);
-  }
-#sub-title {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: rgb(163, 101, 245);
-  }
-#stock-index {
-    background-color: rgb(101, 151, 245);
-  }
-#stock-table {
-    background-color: rgb(80, 78, 245);
-  }
-#moving-average-group {
-    /* height: 70%; */
-    background-color: green;
-  }
-#top-worst {
-    background-color: yellow;
-  }
-#day-averages {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    background-color: rgb(200, 255, 0);
-  }
+  display: grid;
+  height: 10%;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  color: white;
+  padding: 5px
+}
+
 footer {
-    background-color: red;
-  }
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding-left: 10px;
+  border: solid;
+}
+
+#social-media {
+  display: inline-flex;
+  text-align: center;
+  text-decoration: none;
+  margin: auto;
+}
+
+.icon {
+  height: 6vh;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: auto;
+  /* border: solid; */
+}
+
+#left-side {
+  display: grid;
+  grid-template-rows: .9fr .8fr 1.5fr 3fr;
+  background-color: #6d0721;
+  gap: 15px;
+}
+
+#right-side {
+  display: grid;
+  grid-template-rows: 1.8fr 1fr;
+  gap: 15px;
+}
+
+#main-title {
+  display: grid;
+  font-size: 1.5em;
+  grid-template-columns: 1fr 5fr;
+  border: solid;
+}
+
+#main-icon {
+  height: 9vh;
+  padding: 10px;
+}
+
+#sub-title {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  padding: 10px;
+  border: solid;
+}
+
+#date-range {
+  padding: 10px;
+  margin: auto;
+  border: solid;
+}
+
+#start-date, #end-date {
+  height: 25px;
+  background-color: #ff6680;
+  border: solid 1px white;
+}
+
+/* #start-date::-webkit-calendar-picker-indicator, #end-date::-webkit-calendar-picker-indicator {
+  background-image: None;
+  width: 0px;
+  height: 0px;
+} */
+
+#last-price-date {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  border: solid;
+}
+
+#stock-index {
+  padding: 10px;
+  border: solid;
+}
+
+#stock-table {
+  padding: 10px;
+  border: solid;
+}
+
+#moving-averages {
+  display: grid;
+  grid-template-rows: .25fr 1fr .5fr;
+  background-color: #6d0721;
+  gap: 10px;
+  padding: 10px;
+  border: solid;
+}
+
+#moving-average-title {
+  display: grid;
+  grid-template-columns: 1fr .8fr;
+  padding-left: 10px;
+  border: solid;
+}
+
+#ticker-group {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  text-align: center;
+  margin: auto;
+}
+
+#ticker-symbol {
+  font-family: wf_standard-font, helvetica, arial, sans-serif;
+  font-size: 2em;
+}
+
+#moving-average-group {
+  border: solid;
+}
+
+#moving-average-subtitle {
+  display: inline-flex;
+}
+
+.moving-average {
+  padding: 10px;
+}
+
+.moving-average:nth-child(1) > .circle {
+  background-color: rgb(255, 255, 255);
+}
+
+.moving-average:nth-child(2) > .circle {
+  background-color: rgb(227, 135, 245);
+}
+
+.moving-average:nth-child(3) > .circle {
+  background-color: rgb(148, 86, 199);
+}
+
+#trading-volume-group {
+  border: solid;
+}
+
+.trading-volume:nth-child(1) > .circle {
+  background-color: rgb(252, 52, 152);
+}
+
+.trading-volume:nth-child(2) > .circle {
+  background-color: rgb(255, 181, 239);
+}
+
+#trading-volume-title {
+  display: inline-flex;
+}
+
+.trading-volume{
+  padding: 10px;
+}
+
+.circle {
+  height: 13px;
+  width: 13px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#top-worst {
+  background-color: #6d0721;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: solid;
+}
+
+#day-average-group {
+  display: grid;
+  text-align: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.day-average {
+  min-height: inherit;
+  height: 200px;
+  border: solid;
+}
