@@ -1,0 +1,70 @@
+.range_container {
+  display: flex;
+  flex-direction: column;
+  margin: 10% auto;
+}
+
+.sliders_control {
+  position: relative;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  pointer-events: all;
+  width: 4px;
+  height: 24px;
+  background-color: #ffbfbf;
+  border-radius: 25%;
+  box-shadow: 0 0 0 1px #ffbfbf;
+  cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: all;
+  width: 4px;
+  height: 24px;
+  background-color: #ffbfbf;
+  border-radius: 25%;
+  box-shadow: 0 0 0 1px #ffbfbf;
+  cursor: pointer;  
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  background: #be7676;
+}
+
+input[type=range]::-webkit-slider-thumb:active {
+  box-shadow: inset 0 0 3px #be7676, 0 0 9px #704343;
+  -webkit-box-shadow: inset 0 0 3px #be7676, 0 0 9px #704343;
+}
+
+input[type="number"] {
+  color: #ffbfbf;
+  width: 50px;
+  height: 30px;
+  font-size: 20px;
+  border: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
+}
+
+input[type="range"] {
+  -webkit-appearance: none; 
+  appearance: none;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  background-color: #ff8787;
+  pointer-events: none;
+}
+
+#fromSlider {
+  height: 0;
+  z-index: 1;
+}
+/* view rawdualRangeSlider.css hosted with ❤ by GitHub */
