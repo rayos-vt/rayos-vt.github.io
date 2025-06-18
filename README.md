@@ -1,2 +1,2 @@
 # 100GF-Stock-Market-Dashboard
-Stock Market dashboard for the G&amp;F 100, the stock index for the 100 girlfriends from the 100 Girlfriends Who Really, Really, Really, Really, Really Love You
+Stock Market Dashboard for the G&amp;F 100, the stock index for the 100 girlfriends from the 100 Girlfriends Who Really, Really, Really, Really, Really Love You. Based on David Akanji's [Stock Market Dashboard](https://app.fabric.microsoft.com/view?r=eyJrIjoiNTY2MGNkZjAtNDc2MC00YzM4LWI2YmItMGM1MTM3YjMzZWU0IiwidCI6IjljMWQ1MDE5LTMxM2UtNDMwNS1hMjBhLTgwOGExZmUyYWI2ZiJ9&pageName=ReportSection).
