@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="styles/style.css" rel="stylesheet">
     <link href="styles/date-range-slider.css" rel="stylesheet">
-    <script src="scripts/main.js" async></script>
-    <script src="scripts/date-range-slider.js" async></script>
   </head>
   <body>
     <main>
@@ -21,7 +19,7 @@
             <label for="start-date"></label>
             <input type="date" id="start-date" name="start-date" value="2019-12-26">
             <label for="end-date"></label>
-            <input type="date" id="end-date" name="end-date" value="2025-01-01">
+            <input type="date" id="end-date" name="end-date" value="">
             <div class="range_container">
                 <div class="sliders_control">
                     <input id="fromSlider" type="range" value="0" min="0" max="100"/>
@@ -30,18 +28,28 @@
             </div>
           </div>
           <div>
-            <div id="last-price-date">
+            <div id="last-price-group">
                 <h3>Last Price Date -</h3>
-                <h2 style="font-family: wf_standard-font, helvetica, arial, sans-serif;">8/26/2020</h2>
+                <h2  id="last-price-date"></h2>
             </div>
             <div id="details">Select the stock code for price/volume visual</div>
           </div>
         </div>
-        <div id="stock-index">
-          <table>stock index</table>
-        </div>
         <div id="stock-table">
-          <table>stock table</table>
+          <table>
+            <thead>
+              <tr>
+                <th>Stock Codes</th>
+                <th>Last Price</th>
+                <th>Previous Day Price</th>
+                <th>Price Change</th>
+                <th>% Change</th>
+                <th>Max Price</th>
+                <th>Low Price</th>
+              </tr>
+            </thead>
+            <tbody id="stock-table-tody"></tbody>
+          </table>
         </div>
       </div>
       <div id="right-side">
@@ -49,44 +57,30 @@
           <div id="moving-average-title">
             <h3>Stock Price Moving Average Trend By Date</h3>
             <div id="ticker-group">
-              Currently showing - <span id="ticker-symbol">HKR</span>
+              Currently showing - <span id="ticker-symbol"></span>
             </div>
           </div>
           <div id="moving-average-group">
-            <div id="moving-average-subtitle">
-              <div class="moving-average">
-                <span class="circle"></span> Stocks Prices
-              </div>
-              <div class="moving-average">
-                <span class="circle"></span> 30D MA
-              </div>
-              <div class="moving-average">
-                <span class="circle"></span> 90D MA
-              </div>
-            </div>
+            <canvas id="moving-average-chart"></canvas>
           </div>
           <div id="trading-volume-group">
-            <div id="trading-volume-title">
-              <div class="trading-volume">
-                <span class="circle"></span> Trading Volume
-              </div>
-              <div class="trading-volume">
-                <span class="circle"></span> Previous Volume High
-              </div>
-            </div>
+            <canvas id="trading-volume-chart"></canvas>
           </div>
         </div>
         <div id="top-worst">
           <h3>Top and Worst 3 Performing Stock</h3>
           <div id="day-average-group">
-            <div class="day-average">
+            <div class="day-average" id="last-30-days">
               <h3>Last 30 Days</h3>
+              <div></div>
             </div>
-            <div class="day-average">
+            <div class="day-average" id="last-7-days">
               <h3>Last 7 Days</h3>
+              <div></div>
             </div>
-            <div class="day-average">
+            <div class="day-average" id="selected-days">
               <h3>Selected Days</h3>
+              <div></div>
             </div>
           </div>
         </div>
@@ -105,9 +99,16 @@
             <a href="https://discord.gg/XvAJquafDj">
               <img class="icon" src="images/discord-icon.png"  alt="">
             </a>
+            <a href="https://github.com/rayos-vt/100GF-Stock-Market-Dashboard">
+              <img class="icon" src="images/github-icon.png"  alt="">
+            </a>
           </div>
         </footer>
       </div>
     </main>
   </body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" async></script>
+    <script src="scripts/main.js" async></script>
+    <script src="scripts/date-range-slider.js" async></script>
+    <script type="module" src="scripts/create-charts.js" async></script>
 </html>
