@@ -1,29 +1,57 @@
-import Chart from 'chart.js/auto';
-import { getRelativePosition } from 'chart.js/helpers';
+function setTickerSymbol() {
 
-const mariadb = require('mariadb');
-const pool = mariadb.createPool({
-    host: '192.168.1.31', 
-    user:'root', 
-    password: 'WriteR_AdmiN1',
-    database: '100gf_stocks',
-    connectionLimit: 5
-});
-async function asyncFunction() {
-  let conn;
-  try {
-    conn = await pool.getConnection();
-    const rows = await conn.query("SELECT 1 as val");
-    console.log(rows); //[ {val: 1}, meta: ... ]
-    const res = await conn.query("INSERT INTO myTable value (?, ?)", [1, "mariadb"]);
-    console.log(res); // { affectedRows: 1, insertId: 1, warningStatus: 0 }
-
-  } catch (err) {
-	throw err;
-  } finally {
-	if (conn) conn.end();
-  }
+  var symbols = [
+    "RNT",
+    "HKR",
+    "KRN",
+    "SZK",
+    "NNE",
+    "KSR",
+    "HHR",
+    "KRM",
+    "MEI",
+    "IKS",
+    "MMM",
+    "MMK",
+    "CYI",
+    "NDS",
+    "YMM",
+    "MMJ",
+    "YKY",
+    "KSK",
+    "AHK",
+    "UTN",
+    "MAI",
+    "MMH",
+    "RNB",
+    "SUH",
+    "EIR",
+    "TMN",
+    "HMK",
+    "MTR",
+    "USM",
+    "MRZ",
+    "SKT",
+    "NMN",
+    "HSH",
+    "KMR",
+    ];
+  var ticker = symbols[Math.floor(Math.random() * symbols.length)];
+  document.getElementById("ticker-symbol").innerHTML = ticker;
 }
-asyncFunction().then(() => {
-  pool.end();
-});
+
+function getLastUpdate() {
+  var now = new Date();
+  // 7 = number of days in week, 3 = the Wednesday (0 = sunday)
+  var daysAfterLastWednesday = (-7 + 3) - now.getDay(); 
+  var currentMs = now.getTime();
+  var lastUpdate = new Date(
+    currentMs + 
+    (daysAfterLastWednesday * 24 * 60 * 60 * 1000)
+  );
+  var test = lastUpdate.getMonth();
+  document.getElementById("last-price-date").innerHTML = (lastUpdate.getMonth() + 1) + "/" + lastUpdate.getDate() + "/" + lastUpdate.getFullYear();
+  document.getElementById("end-date").value = lastUpdate.getFullYear() + "-" + String((lastUpdate.getMonth() + 1)).padStart(2, '0') + "-" + lastUpdate.getDate();
+}
+setTickerSymbol();
+getLastUpdate();
