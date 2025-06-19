@@ -1,27 +1,8 @@
-// function controlFromInput(fromSlider, fromInput, toInput, controlSlider) {
-//     const [from, to] = getParsed(fromInput, toInput);
-//     fillSlider(fromInput, toInput, '#F6F6F6', '#ffbfbf', controlSlider);
-//     if (from > to) {
-//         fromSlider.value = to;
-//         fromInput.value = to;
-//     } else {
-//         fromSlider.value = from;
-//     }
-// }
-    
-// function controlToInput(toSlider, fromInput, toInput, controlSlider) {
-//     const [from, to] = getParsed(fromInput, toInput);
-//     fillSlider(fromInput, toInput, '#F6F6F6', '#ffbfbf', controlSlider);
-//     setToggleAccessible(toInput);
-//     if (from <= to) {
-//         toSlider.value = to;
-//         toInput.value = to;
-//     } else {
-//         toInput.value = from;
-//     }
-// }
+const start_date = "2019-12-16";
+const end_date = "0";
 
 function controlFromSlider(fromSlider, toSlider, fromInput) {
+
   const [from, to] = getParsed(fromSlider, toSlider);
   fillSlider(fromSlider, toSlider, '#F6F6F6', '#ffbfbf', toSlider);
   if (from > to) {
@@ -33,25 +14,26 @@ function controlFromSlider(fromSlider, toSlider, fromInput) {
 }
 
 function controlToSlider(fromSlider, toSlider, toInput) {
+
   const [from, to] = getParsed(fromSlider, toSlider);
   fillSlider(fromSlider, toSlider, '#F6F6F6', '#ffbfbf', toSlider);
   setToggleAccessible(toSlider);
   if (from <= to) {
     toSlider.value = to;
-    toInput.value = to;
   } else {
-    toInput.value = from;
     toSlider.value = from;
   }
 }
 
 function getParsed(currentFrom, currentTo) {
+
   const from = parseInt(currentFrom.value, 10);
   const to = parseInt(currentTo.value, 10);
   return [from, to];
 }
 
 function fillSlider(from, to, sliderColor, rangeColor, controlSlider) {
+
     const rangeDistance = to.max-to.min;
     const fromPosition = from.value - to.min;
     const toPosition = to.value - to.min;
@@ -66,6 +48,7 @@ function fillSlider(from, to, sliderColor, rangeColor, controlSlider) {
 }
 
 function setToggleAccessible(currentTarget) {
+  
   const toSlider = document.querySelector('#toSlider');
   if (Number(currentTarget.value) <= 0 ) {
     toSlider.style.zIndex = 2;
@@ -83,6 +66,4 @@ setToggleAccessible(toSlider);
 
 fromSlider.oninput = () => controlFromSlider(fromSlider, toSlider, fromInput);
 toSlider.oninput = () => controlToSlider(fromSlider, toSlider, toInput);
-fromInput.oninput = () => controlFromInput(fromSlider, fromInput, toInput, toSlider);
-toInput.oninput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
 // view rawdualRangeSlider.js hosted with ❤ by GitHub
