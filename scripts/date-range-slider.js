@@ -1,6 +1,5 @@
-
-
 function getLastUpdate() {
+
   var now = new Date();
   // 7 = number of days in week, 3 = the Wednesday (0 = sunday)
   var daysAfterLastWednesday = (-7 + 3) - now.getDay(); 
@@ -9,10 +8,22 @@ function getLastUpdate() {
     currentMs + (daysAfterLastWednesday * 24 * 60 * 60 * 1000)
   );
   
-  document.getElementById("last-price-date").innerHTML = (lastUpdate.getMonth() + 1) + "/" + lastUpdate.getDate() + "/" + lastUpdate.getFullYear();
-  document.getElementById("endDate").value = lastUpdate.getFullYear() + "-" + String((lastUpdate.getMonth() + 1)).padStart(2, '0') + "-" + lastUpdate.getDate();
+  document.getElementById("last-price-date").innerHTML = (
+    (lastUpdate.getMonth() + 1) + "/" + 
+    lastUpdate.getDate() + "/" + 
+    lastUpdate.getFullYear()
+  );
+  document.getElementById("endDate").value = (
+    lastUpdate.getFullYear() + "-" + 
+    String((lastUpdate.getMonth() + 1)).padStart(2, '0') + "-" + 
+    lastUpdate.getDate()
+  );
 
-  return (lastUpdate.getMonth() + 1) + "/" + lastUpdate.getDate() + "/" + lastUpdate.getFullYear();
+  return (
+    (lastUpdate.getMonth() + 1) + "-" + 
+    lastUpdate.getDate() + "-" + 
+    lastUpdate.getFullYear()
+  );
 }
 
 function controlstartDate(fromSlider, startDate, endDate, controlSlider) {
@@ -96,10 +107,8 @@ function setToggleAccessible(currentTarget) {
   }
 }
 
-getLastUpdate(); 
-
-const start_date = "2019-12-16";
-const end_date = "0";
+const start_date = "16-12-2019";
+const end_date = getLastUpdate();
 const sliderColor = "#F6F6F6";
 const rangeColor = "#ffbfbf";
 const fromSlider = document.querySelector('#fromSlider');
