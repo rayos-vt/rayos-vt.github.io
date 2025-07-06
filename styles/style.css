@@ -8,12 +8,7 @@ html {
 }
 
 * {
-    box-sizing: inherit;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
+  box-sizing: inherit;
 }
 
 main {
@@ -22,10 +17,15 @@ main {
   color: white;
 }
 
+img {
+  /* max-width: 100%; */
+  /* height: auto; */
+}
+
 .icon {
   padding-left: 20px;
   padding-right: 20px;
-  margin: auto;
+  /* margin: auto; */
   /* border: solid; */
 }
 
@@ -45,7 +45,7 @@ main {
 }
 
 #main-icon {
-  height: 9vh;
+  margin: auto;
   padding: 10px;
 }
 
@@ -57,22 +57,24 @@ main {
 }
 
 #date-range {
-  padding: 10px;
   margin: auto;
   border: solid;
+  padding: 10px;
 }
 
-#start-date, #end-date {
-  height: 25px;
+#startDate, #endDate {
+  height: 30px;
   background-color: #ff6680;
   border: solid 1px white;
 }
 
-/* #start-date::-webkit-calendar-picker-indicator, #end-date::-webkit-calendar-picker-indicator {
+#startDate::-webkit-calendar-picker-indicator, #endDate::-webkit-calendar-picker-indicator {
   background-image: None;
-  width: 0px;
-  height: 0px;
-} */
+}
+
+#startDate::slotted, #endDate::slotted {
+  margin: auto;
+}
 
 #last-price-group {
   display: grid;
@@ -81,12 +83,16 @@ main {
   border: solid;
 }
 
-#details {
-  font-size: 1.1em;
-}
-
 #last-price-date {
   font-family: wf_standard-font, helvetica, arial, sans-serif;
+  margin: auto;
+  font-size: 1.75em;
+  padding: 0px;
+}
+
+#last-price-details {
+  font-size: 1.4em;
+  text-align: center;
 }
 
 #stock-index {
@@ -159,9 +165,10 @@ canvas {
 
 #ticker-group {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 1.7fr;
   text-align: center;
   margin: auto;
+  border: solid;
 }
 
 #ticker-symbol {
@@ -196,34 +203,52 @@ canvas {
   border: solid;
 }
 
-@media (min-width: 1050px) { /*Landscape mode*/
+/* Footer content of page */
+footer {
+  display: flex;
+  padding-left: 10px;
+  border: solid;
+}
+
+/*Landscape mode*/
+@media (min-width: 1000px) { 
   main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 5px
   }
 
-  footer {
-    display: flex;
-    /* grid-template-columns: 1fr 2fr; */
-    padding-left: 10px;
-    border: solid;
+  #main-icon {
+    height: 10vh;
   }
 
   #social-media {
-    display: inline-flex;
-    text-align: center;
-    text-decoration: none;
+    display: flex;
     margin: auto;
   }
+
   .icon {
-    height: 8vh;
+    height: 6vh;
   }
 }
 
-@media (min-width: 600px) { /*Portrait mode*/
+/*Portrait mode*/
+@media (max-width: 700px) { 
   main {
+    display: flex;
+    flex-direction: column;
   } 
+
+  #main-icon {
+    height: 1vh;
+  }
+
+  #social-media {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+  }
+
   .icon {
     height: 5vh;
   }
