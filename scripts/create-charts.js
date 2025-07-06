@@ -1,7 +1,9 @@
-const stock_index_chart = document.getElementById("stock-index-chart");
-const stock_table_chart = document.getElementById("stock-table-chart");
+const stock_table_tbody = document.getElementById("stock-table-tbody");
 const moving_average_chart = document.getElementById("moving-average-chart");
 const trading_volume_chart = document.getElementById("trading-volume-chart");
+const last_30_days = document.getElementById("last-30-days");
+const last_7_days = document.getElementById("last-7-days");
+const selected_days = document.getElementById("selected-days");
 const symbols = [
     "RNT",
     "HKR",
@@ -62,7 +64,7 @@ const symbols = [
         );
     }
     
-    document.getElementById("stock-table-tody").innerHTML = rows;
+    stock_table_tbody.innerHTML = rows;
 })();
 
 (async function createMovingAverageChart() {
@@ -76,22 +78,25 @@ const symbols = [
         label: 'Stock Prices',
         data: [12,15,8,4,82,4,15,8,4,15,8,4,82,4,82,15,36,15,8,14,4],
         borderColor: 'rgb(255, 255, 255)',
+        backgroundColor: 'rgb(255, 255, 255)',
         yAxisID: 'y',
         xAxisID: 'x'
         },
         {
         label: '30D MA',
-        data: [22,15,8,4,82,4,14,18,15,8,4,82,8,4,82,428,4,4,9,19,10],
+        data: [2,10,15,8,4,82,428,4,9,3,8,4,82,48,4,15,8,4,82,8,4,82],
+        borderColor: 'rgb(148, 86, 199)',
+        backgroundColor: 'rgb(148, 86, 199)',
         borderDash: [10],
-        borderColor: 'rgb(227, 135, 245)',
-        yAxisID: 'y1',
+        yAxisID: 'y2',
         },
         {
         label: '90D MA',
-        data: [2,10,15,8,4,82,428,4,9,3,8,4,82,48,4,15,8,4,82,8,4,82],
+        data: [22,15,8,4,82,4,14,18,15,8,4,82,8,4,82,428,4,4,9,19,10],
+        borderColor: 'rgb(250, 69, 69)',
+        backgroundColor: 'rgb(250, 69, 69)',
         borderDash: [10],
-        borderColor: 'rgb(148, 86, 199)',
-        yAxisID: 'y2',
+        yAxisID: 'y1',
         }
     ]
     },
@@ -114,6 +119,19 @@ const symbols = [
         }
       },
       borderJoinStyle: "bevel",
+      plugins: {
+        legend: {
+          align: 'start',
+          labels: {
+            usePointStyle: true,
+            font: {
+              size: 16,
+            },
+            boxHeight: 9,
+            color: 'rgb(252, 255, 255)'
+          },
+        },
+      }
     }
   });
 })();
@@ -128,16 +146,14 @@ const symbols = [
         {
         label: 'Trading Volume',
         data: [12, 19, 3, 5, 2, 3],
-        borderColor: 'rgb(252, 52, 152)',
-        borderWidth: 1,
+        backgroundColor: 'rgb(253, 70, 162)',
         yAxisID: 'y',
         xAxisID: 'x'
       },
     {
         label: 'Previous Volume High',
         data: [12, 19, 3, 5, 2, 3],
-        borderColor: 'rgb(255, 181, 239)',
-        borderWidth: 1,
+        backgroundColor: 'rgb(255, 203, 244)',
         yAxisID: 'y1',
         xAxisID: 'x1'
       }
@@ -157,7 +173,60 @@ const symbols = [
           display: false
         },
       },
-    //   responsive: True
+    //   responsive: True,
+      plugins: {
+        legend: {
+          align: 'start',
+          labels: {
+            usePointStyle: true,
+            font: {
+              size: 16,
+            },
+            boxHeight: 9,
+            color: 'rgb(252, 255, 255)'
+          },
+        },
+      }
+    }
+  });
+})();
+
+(async function createTopWorstChart() {
+    new Chart(last_30_days, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [
+        {
+        label: 'Trading Volume',
+        data: [12, 9, 3, -5, -2, -3],
+        borderColor: 'rgb(252, 52, 152)',
+        borderWidth: 1,
+        yAxisID: 'y',
+        xAxisID: 'x'
+      }
+    ]
+    },
+    options: {
+      indexAxis: 'y',
+      scales: {
+        x: {
+          beginAtZero: true,
+          display: false
+        },
+        y: {
+          beginAtZero: true
+        },
+      },
+      // responsive: True,
+      plugins: {
+        legend:{
+          display: false,
+        },
+        title: {
+          display: false,
+        }
+      }
     }
   });
 })();
