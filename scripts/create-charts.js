@@ -1,6 +1,3 @@
-// import Chart from 'chart.js/auto';
-// import { getRelativePosition } from 'chart.js/helpers';
-
 const stock_index_chart = document.getElementById("stock-index-chart");
 const stock_table_chart = document.getElementById("stock-table-chart");
 const moving_average_chart = document.getElementById("moving-average-chart");
@@ -45,6 +42,7 @@ const symbols = [
 (async function createStockIndexChart() {
 
 })();
+
 (async function createStockTableChart() {
     
     var rows = '';
@@ -66,6 +64,7 @@ const symbols = [
     
     document.getElementById("stock-table-tody").innerHTML = rows;
 })();
+
 (async function createMovingAverageChart() {
 
   new Chart(moving_average_chart, {
@@ -118,6 +117,7 @@ const symbols = [
     }
   });
 })();
+
 (async function createTradingVolumeChart() {
 
   new Chart(trading_volume_chart, {

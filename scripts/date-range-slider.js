@@ -1,7 +1,19 @@
-const start_date = "2019-12-16";
-const end_date = "0";
-const sliderColor = "#F6F6F6";
-const rangeColor = "#ffbfbf";
+
+
+function getLastUpdate() {
+  var now = new Date();
+  // 7 = number of days in week, 3 = the Wednesday (0 = sunday)
+  var daysAfterLastWednesday = (-7 + 3) - now.getDay(); 
+  var currentMs = now.getTime();
+  var lastUpdate = new Date(
+    currentMs + (daysAfterLastWednesday * 24 * 60 * 60 * 1000)
+  );
+  
+  document.getElementById("last-price-date").innerHTML = (lastUpdate.getMonth() + 1) + "/" + lastUpdate.getDate() + "/" + lastUpdate.getFullYear();
+  document.getElementById("endDate").value = lastUpdate.getFullYear() + "-" + String((lastUpdate.getMonth() + 1)).padStart(2, '0') + "-" + lastUpdate.getDate();
+
+  return (lastUpdate.getMonth() + 1) + "/" + lastUpdate.getDate() + "/" + lastUpdate.getFullYear();
+}
 
 function controlstartDate(fromSlider, startDate, endDate, controlSlider) {
 
@@ -84,6 +96,12 @@ function setToggleAccessible(currentTarget) {
   }
 }
 
+getLastUpdate(); 
+
+const start_date = "2019-12-16";
+const end_date = "0";
+const sliderColor = "#F6F6F6";
+const rangeColor = "#ffbfbf";
 const fromSlider = document.querySelector('#fromSlider');
 const toSlider = document.querySelector('#toSlider');
 const startDate = document.querySelector('#startDate');
