@@ -1,22 +1,49 @@
 const start_date = "2019-12-16";
 const end_date = "0";
+const sliderColor = "#F6F6F6";
+const rangeColor = "#ffbfbf";
 
-function controlFromSlider(fromSlider, toSlider, fromInput) {
+function controlstartDate(fromSlider, startDate, endDate, controlSlider) {
 
-  const [from, to] = getParsed(fromSlider, toSlider);
-  fillSlider(fromSlider, toSlider, '#F6F6F6', '#ffbfbf', toSlider);
+  const [from, to] = getParsed(startDate, endDate);
+  fillSlider(startDate, endDate, sliderColor, rangeColor, controlSlider);
   if (from > to) {
-    fromSlider.value = to;
-    fromInput.value = to;
+      fromSlider.value = to;
+      startDate.value = to;
   } else {
-    fromInput.value = from;
+      fromSlider.value = from;
+  }
+}
+    
+function controlendDate(toSlider, startDate, endDate, controlSlider) {
+
+  const [from, to] = getParsed(startDate, endDate);
+  fillSlider(startDate, endDate, sliderColor, rangeColor, controlSlider);
+  setToggleAccessible(endDate);
+  if (from <= to) {
+    toSlider.value = to;
+    endDate.value = to;
+  } else {
+    endDate.value = from;
   }
 }
 
-function controlToSlider(fromSlider, toSlider, toInput) {
+function controlFromSlider(fromSlider, toSlider, startDate) {
 
   const [from, to] = getParsed(fromSlider, toSlider);
-  fillSlider(fromSlider, toSlider, '#F6F6F6', '#ffbfbf', toSlider);
+  fillSlider(fromSlider, toSlider, sliderColor, rangeColor, toSlider);
+  if (from > to) {
+    fromSlider.value = to;
+    startDate.value = to;
+  } else {
+    startDate.value = from;
+  }
+}
+
+function controlToSlider(fromSlider, toSlider, endDate) {
+
+  const [from, to] = getParsed(fromSlider, toSlider);
+  fillSlider(fromSlider, toSlider, sliderColor, rangeColor, toSlider);
   setToggleAccessible(toSlider);
   if (from <= to) {
     toSlider.value = to;
@@ -59,11 +86,11 @@ function setToggleAccessible(currentTarget) {
 
 const fromSlider = document.querySelector('#fromSlider');
 const toSlider = document.querySelector('#toSlider');
-const fromInput = document.querySelector('#fromInput');
-const toInput = document.querySelector('#toInput');
-fillSlider(fromSlider, toSlider, '#F6F6F6', '#ffbfbf', toSlider);
+const startDate = document.querySelector('#startDate');
+const endDate = document.querySelector('#endDate');
+fillSlider(fromSlider, toSlider, sliderColor, rangeColor, toSlider);
 setToggleAccessible(toSlider);
 
-fromSlider.oninput = () => controlFromSlider(fromSlider, toSlider, fromInput);
-toSlider.oninput = () => controlToSlider(fromSlider, toSlider, toInput);
+fromSlider.oninput = () => controlFromSlider(fromSlider, toSlider, startDate);
+toSlider.oninput = () => controlToSlider(fromSlider, toSlider, endDate);
 // view rawdualRangeSlider.js hosted with ❤ by GitHub

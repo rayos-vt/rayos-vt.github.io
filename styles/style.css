@@ -1,34 +1,28 @@
 html {
   background-color: #ff6a83;
   font-family: "Segoe UI", wf_segoe-ui_normal, helvetica, arial, sans-serif;
-  height: fit-content;
+  height: 100vh;
+  box-sizing: border-box;
+  margin: auto;
+  line-height: 1.4;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 main {
-  display: grid;
-  height: max-content;
-  grid-template-columns: 1fr 1fr;
+  /* height: fit-content; */
   gap: 15px;
   color: white;
-  padding: 5px
-}
-
-footer {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  padding-left: 10px;
-  border: solid;
-}
-
-#social-media {
-  display: inline-flex;
-  text-align: center;
-  text-decoration: none;
-  margin: auto;
 }
 
 .icon {
-  height: 6vh;
   padding-left: 20px;
   padding-right: 20px;
   margin: auto;
@@ -44,22 +38,23 @@ canvas {
 }
 
 #left-side {
+  /* height: cont; */
   display: grid;
-  grid-template-rows: .4fr .7fr 1.8fr 3.1fr;
+  grid-template-rows: .4fr .7fr 1.8fr;
   background-color: #6d0721;
   gap: 15px;
 }
 
 #right-side {
   display: grid;
-  grid-template-rows: 1.8fr 1fr;
+  /*grid-template-rows: 1.8fr 1fr; */
   gap: 15px;
 }
 
 #main-title {
   display: grid;
-  font-size: 1.4em;
   grid-template-columns: 1fr 5fr;
+  font-size: 1.4em;
   border: solid;
 }
 
@@ -103,6 +98,7 @@ canvas {
 #details {
   font-size: 1.1em;
 }
+
 #last-price-date {
   font-family: wf_standard-font, helvetica, arial, sans-serif;
 }
@@ -118,9 +114,9 @@ canvas {
 }
 
 table {
-  /* display: block; 
-  overflow-y: scroll;  */
-  width: 100%;
+  /* display: block;  */
+  overflow-y: scroll; 
+  /* width: 100%; */
   max-height: inherit;
   border-collapse: collapse;
   border-top: 1px solid #999;
@@ -184,8 +180,7 @@ td {
 
 #top-worst {
   background-color: #6d0721;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px;
   border: solid;
 }
 
@@ -200,4 +195,36 @@ td {
   min-height: inherit;
   height: 200px;
   border: solid;
+}
+
+@media (min-width: 1050px) { /*Landscape mode*/
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 5px
+  }
+
+  footer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding-left: 10px;
+    border: solid;
+  }
+
+  #social-media {
+    display: inline-flex;
+    text-align: center;
+    text-decoration: none;
+    margin: auto;
+  }
+  .icon {
+    height: 6vh;
+  }
+}
+@media (min-width: 600px) { /*Portrait mode*/
+  main {
+  } 
+  .icon {
+    height: 5vh;
+  }
 }
