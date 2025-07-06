@@ -29,25 +29,11 @@ main {
   /* border: solid; */
 }
 
-canvas {
-  height: 10px;
-}
-
-.chart-container {
-  height:100px;
-}
-
+/* Main content of left/top side of page */
 #left-side {
-  /* height: cont; */
-  display: grid;
-  grid-template-rows: .4fr .7fr 1.8fr;
+  display: flex;
+  flex-direction: column;
   background-color: #6d0721;
-  gap: 15px;
-}
-
-#right-side {
-  display: grid;
-  /*grid-template-rows: 1.8fr 1fr; */
   gap: 15px;
 }
 
@@ -116,8 +102,7 @@ canvas {
 table {
   /* display: block;  */
   overflow-y: scroll; 
-  /* width: 100%; */
-  max-height: inherit;
+  width: inherit;
   border-collapse: collapse;
   border-top: 1px solid #999;
   border-bottom: 1px solid #999;
@@ -126,15 +111,14 @@ table {
   border: solid;
 }
 
-th,
-td {
+thead {
+  border-bottom: solid 2px;
+}
+
+th, td {
   vertical-align: top;
   padding: 0.6em;
   border: solid 1px #6d0721;
-}
-
-thead {
-  border-bottom: solid 2px;
 }
 
 td {
@@ -142,9 +126,24 @@ td {
   text-align: right;
 }
 
+/* Main content of right/bottom side of page */
+#right-side {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+canvas {
+  height: 10px;
+}
+
+.chart-container {
+  height:100px;
+}
+
 #moving-averages {
-  display: grid;
-  grid-template-rows: .25fr 1fr .5fr;
+  display: flex;
+  flex-direction: column;
   background-color: #6d0721;
   gap: 10px;
   padding: 10px;
@@ -185,13 +184,13 @@ td {
 }
 
 #day-average-group {
-  display: grid;
+  display: flex;
   text-align: center;
-  grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
 }
 
 .day-average {
+  flex-grow: 1;
   min-height: inherit;
   height: 200px;
   border: solid;
@@ -205,8 +204,8 @@ td {
   }
 
   footer {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+    /* grid-template-columns: 1fr 2fr; */
     padding-left: 10px;
     border: solid;
   }
@@ -218,9 +217,10 @@ td {
     margin: auto;
   }
   .icon {
-    height: 6vh;
+    height: 8vh;
   }
 }
+
 @media (min-width: 600px) { /*Portrait mode*/
   main {
   } 
