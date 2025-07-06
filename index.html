@@ -29,10 +29,9 @@
           </div>
           <div>
             <div id="last-price-group">
-                <h3>Last Price Date -</h3>
-                <h2  id="last-price-date"></h2>
+                <h3>Last Price Date -</h3><span id="last-price-date"></span>
             </div>
-            <div id="details">Select the stock code for price/volume visual</div>
+            <div id="last-price-details">Select the stock code for price/volume visual</div>
           </div>
         </div>
         <div id="stock-table">
@@ -48,7 +47,7 @@
                 <th>Low Price</th>
               </tr>
             </thead>
-            <tbody id="stock-table-tody"></tbody>
+            <tbody id="stock-table-tbody"></tbody>
           </table>
         </div>
       </div>
@@ -70,17 +69,17 @@
         <div id="top-worst">
           <h3>Top and Worst 3 Performing Stock</h3>
           <div id="day-average-group">
-            <div class="day-average" id="last-30-days">
-              <h3>Last 30 Days</h3>
-              <div></div>
+            <div class="day-average">
+              <h3>Last 30 Days</h3>            
+              <canvas id="last-30-days"></canvas>
             </div>
-            <div class="day-average" id="last-7-days">
-              <h3>Last 7 Days</h3>
-              <div></div>
+            <div class="day-average">
+              <h3>Last 7 Days</h3>            
+              <canvas id="last-7-days"></canvas>
             </div>
-            <div class="day-average" id="selected-days">
-              <h3>Selected Days</h3>
-              <div></div>
+            <div class="day-average">
+              <h3>Selected Days</h3>            
+              <canvas id="selected-days"></canvas>
             </div>
           </div>
         </div>
@@ -89,7 +88,7 @@
             <h2>Created by : KhaosSquared</h2>
           </div>
           <div id="social-media">
-            Follow us on:-
+            <div>Follow us on:-</div>
             <a href="https://www.youtube.com/@khaossquared3463">
               <img class="icon" src="images/youtube-icon.png"  alt="">
             </a>
