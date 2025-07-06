@@ -54,17 +54,17 @@ input[type="range"] {
 
 #startDate, #endDate {
   height: 30px;
+  color: white;
   background-color: #ff6680;
   border: solid 1px white;
-  color: white;
 }
 
 #startDate::-webkit-calendar-picker-indicator, #endDate::-webkit-calendar-picker-indicator {
   background-image: None;
 }
 
-#startDate::slotted, #endDate::slotted {
-  margin: auto;
+#startDate::-webkit-datetime-edit, #endDate::-webkit-datetime-edit {
+  text-align: center;
 }
 
 /* view rawdualRangeSlider.css hosted with ❤ by GitHub */
