@@ -17,16 +17,10 @@ main {
   color: white;
 }
 
-img {
-  /* max-width: 100%; */
-  /* height: auto; */
-}
-
 .icon {
-  padding-left: 20px;
-  padding-right: 20px;
-  /* margin: auto; */
-  /* border: solid; */
+  height: 10vh;
+  padding-right: 50px;
+  margin: auto;
 }
 
 /* Main content of left/top side of page */
@@ -41,8 +35,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 5fr;
   font-size: 1.4em;
-  border: solid;
-}
+  }
 
 #main-icon {
   margin: auto;
@@ -50,24 +43,20 @@ img {
 }
 
 #sub-title {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
+  display: flex;
   padding: 10px;
-  border: solid;
-}
+  }
 
 #date-range {
   margin: auto;
-  border: solid;
-  padding: 10px;
+    padding: 10px;
 }
 
 #last-price-group {
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: center;
-  border: solid;
-}
+  }
 
 #last-price-date {
   font-family: wf_standard-font, helvetica, arial, sans-serif;
@@ -83,13 +72,11 @@ img {
 
 #stock-index {
   padding: 10px;
-  border: solid;
-}
+  }
 
 #stock-table {
   padding: 10px;
-  border: solid;
-}
+  }
 
 table {
   /* display: block;  */
@@ -100,8 +87,7 @@ table {
   border-bottom: 1px solid #999;
   background-color: #ff6680;
   text-align: left;
-  border: solid;
-}
+  }
 
 thead {
   border-bottom: solid 2px;
@@ -130,7 +116,7 @@ canvas {
 }
 
 .chart-container {
-  height:100px;
+  /* height:100px; */
 }
 
 #moving-averages {
@@ -139,23 +125,20 @@ canvas {
   background-color: #6d0721;
   gap: 10px;
   padding: 10px;
-  border: solid;
-}
+  }
 
 #moving-average-title {
   display: grid;
   grid-template-columns: 1fr .8fr;
   padding-left: 10px;
-  border: solid;
-}
+  }
 
 #ticker-group {
   display: grid;
   grid-template-columns: 1fr 1.7fr;
   text-align: center;
   margin: auto;
-  border: solid;
-}
+  }
 
 #ticker-symbol {
   font-family: wf_standard-font, helvetica, arial, sans-serif;
@@ -163,18 +146,17 @@ canvas {
 }
 
 #moving-average-group {
-  border: solid;
-}
+  height: 300px;
+  }
 
 #trading-volume-group {
-  border: solid;
-}
+  height: 100px;
+  }
 
 #top-worst {
   background-color: #6d0721;
   padding: 10px;
-  border: solid;
-}
+  }
 
 #day-average-group {
   display: flex;
@@ -186,15 +168,13 @@ canvas {
   flex-grow: 1;
   min-height: inherit;
   height: 200px;
-  border: solid;
-}
+  width: 200px;
+  }
 
 /* Footer content of page */
 footer {
-  display: flex;
   padding-left: 10px;
-  border: solid;
-}
+  }
 
 /*Landscape mode*/
 @media (min-width: 1000px) { 
@@ -205,12 +185,21 @@ footer {
   }
 
   #main-icon {
-    height: 10vh;
+    height: 11vh;
+  }
+  
+  #sub-title {
+    flex-direction: row;
   }
 
   #social-media {
     display: flex;
     margin: auto;
+  }
+
+  footer {
+    display: inline-flex;
+    flex-direction: row;
   }
 
   .icon {
@@ -226,16 +215,23 @@ footer {
   } 
 
   #main-icon {
-    height: 1vh;
+    height: 8vh;
+  }
+
+  #sub-title {
+    flex-direction: column;
   }
 
   #social-media {
+    display: inline-flex;
+  }
+
+  footer {
     display: flex;
-    flex-direction: row;
-    margin: auto;
+    flex-direction: column;
   }
 
   .icon {
-    height: 5vh;
+    height: 1vh;
   }
 }
