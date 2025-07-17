@@ -45,7 +45,7 @@ const symbols = [
 
 })();
 
-(async function createStockTableChart() {
+async function createStockTableChart() {
     
     var rows = '';
     // return;
@@ -65,60 +65,118 @@ const symbols = [
     }
     
     stock_table_tbody.innerHTML = rows;
-})();
+};
 
-(async function createMovingAverageChart() {
+async function createMovingAverageChart() {
 
   new Chart(moving_average_chart, {
     type: 'line',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: ['0', '1', '2', '3', '4', '5', '6', '0', '1', '2', '3', '4', '5', '6'],
       datasets: [
         {
         label: 'Stock Prices',
-        data: [12,15,8,4,82,4,15,8,4,15,8,4,82,4,82,15,36,15,8,14,4],
+        data: [
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10)
+        ],
         borderColor: 'rgb(255, 255, 255)',
         backgroundColor: 'rgb(255, 255, 255)',
         yAxisID: 'y',
-        xAxisID: 'x'
+        xAxisID: 'x',
         },
         {
         label: '30D MA',
-        data: [2,10,15,8,4,82,428,4,9,3,8,4,82,48,4,15,8,4,82,8,4,82],
+        data: [
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10)
+        ],
         borderColor: 'rgb(148, 86, 199)',
         backgroundColor: 'rgb(148, 86, 199)',
         borderDash: [10],
-        yAxisID: 'y2',
         },
         {
         label: '90D MA',
-        data: [22,15,8,4,82,4,14,18,15,8,4,82,8,4,82,428,4,4,9,19,10],
+        data: [
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10)
+        ],
         borderColor: 'rgb(250, 69, 69)',
         backgroundColor: 'rgb(250, 69, 69)',
         borderDash: [10],
-        yAxisID: 'y1',
         }
     ]
     },
     options: {
+      maintainAspectRatio: false,
       scales: {
         x: {
-        //   beginAtZero: true
-          display: false
-        },
+          grid: {display: false},
+          border: {display: false},
+          ticks: {display: false},
+          },
         y: {
-        //   beginAtZero: true
+          grid: {display: false},          
+          border: {display: false},
+          ticks: {
+            color: 'rgb(255, 255, 255)'
+          },
         },
-        y1: {
-        //   beginAtZero: true
-          display: false
-        },
-        y2: {
-        //   beginAtZero: true,
-          display: false
-        }
       },
-      borderJoinStyle: "bevel",
       plugins: {
         legend: {
           align: 'start',
@@ -128,52 +186,102 @@ const symbols = [
               size: 16,
             },
             boxHeight: 9,
-            color: 'rgb(252, 255, 255)'
+            color: 'rgb(255, 255, 255)'
           },
         },
       }
     }
   });
-})();
+};
 
-(async function createTradingVolumeChart() {
+async function createTradingVolumeChart() {
 
   new Chart(trading_volume_chart, {
     type: 'bar',
     data: {
       labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
       datasets: [
-        {
+      {
         label: 'Trading Volume',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10)
+        ],
         backgroundColor: 'rgb(253, 70, 162)',
         yAxisID: 'y',
         xAxisID: 'x'
       },
-    {
+      {
         label: 'Previous Volume High',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10)
+        ],
         backgroundColor: 'rgb(255, 203, 244)',
-        yAxisID: 'y1',
-        xAxisID: 'x1'
+        yAxisID: 'y',
+        xAxisID: 'x'
       }
     ]
     },
     options: {
+      maintainAspectRatio: false,
       scales: {
         x: {
           beginAtZero: true,
-          display: false
+          grid: {display: false},
+          border: {display: false},
+          ticks: {
+            color: 'rgb(255, 255, 255)'
+          },
         },
         y: {
-          beginAtZero: true
-        },
-        y1: {
           beginAtZero: true,
-          display: false
+          grid: {display: false},
+          border: {display: false},
+          ticks: {
+            color: 'rgb(255, 255, 255)',
+            major: {
+              enabled: true
+            }
+          },
         },
       },
-    //   responsive: True,
       plugins: {
         legend: {
           align: 'start',
@@ -189,44 +297,59 @@ const symbols = [
       }
     }
   });
-})();
+};
 
-(async function createTopWorstChart() {
-    new Chart(last_30_days, {
+async function createTopWorstChart(chart_id) {
+    new Chart(chart_id, {
     type: 'bar',
     data: {
       labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
       datasets: [
         {
         label: 'Trading Volume',
-        data: [12, 9, 3, -5, -2, -3],
-        borderColor: 'rgb(252, 52, 152)',
-        borderWidth: 1,
+        data: [
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * 10),
+          (Math.random() * -10),
+          (Math.random() * -10),
+          (Math.random() * -10)],
+        backgroundColor: 'rgb(253, 70, 162)',
         yAxisID: 'y',
         xAxisID: 'x'
       }
     ]
     },
     options: {
+      // responsive: True,
       indexAxis: 'y',
       scales: {
         x: {
           beginAtZero: true,
-          display: false
+          display: false,
+          grid: {display: false},
+          border: {display: false},
         },
         y: {
-          beginAtZero: true
+          beginAtZero: true,
+          grid: {display: false},
+          border: {display: false},
+          ticks: {
+            color: 'rgb(255, 255, 255)'
+          },
         },
       },
-      // responsive: True,
       plugins: {
-        legend:{
-          display: false,
-        },
-        title: {
-          display: false,
-        }
+        legend: {display: false},
+        title: {display: false}
       }
     }
   });
-})();
+};
+
+createStockTableChart();
+createMovingAverageChart();
+createTradingVolumeChart();
+createTopWorstChart(last_30_days);
+createTopWorstChart(last_7_days);
+createTopWorstChart(selected_days);
