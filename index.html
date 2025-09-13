@@ -2,6 +2,9 @@
 <html lang="en-US">
   <head>
     <title>G&F 100 Stock Market Dashboard</title>
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="G&F 100 Stock">
+    <meta property="og:type" content="article">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="styles/style.css" rel="stylesheet">
@@ -59,25 +62,25 @@
               Currently showing - <span id="ticker-symbol"></span>
             </div>
           </div>
-          <div id="moving-average-group">
+          <div id="moving-average-group" class="chart-container">
             <canvas id="moving-average-chart"></canvas>
           </div>
-          <div id="trading-volume-group">
+          <div id="trading-volume-group" class="chart-container">
             <canvas id="trading-volume-chart"></canvas>
           </div>
         </div>
         <div id="top-worst">
           <h3>Top and Worst 3 Performing Stock</h3>
           <div id="day-average-group">
-            <div class="day-average">
+            <div class="day-average" class="chart-container">
               <h3>Last 30 Days</h3>            
               <canvas id="last-30-days"></canvas>
             </div>
-            <div class="day-average">
+            <div class="day-average" class="chart-container">
               <h3>Last 7 Days</h3>            
               <canvas id="last-7-days"></canvas>
             </div>
-            <div class="day-average">
+            <div class="day-average" class="chart-container">
               <h3>Selected Days</h3>            
               <canvas id="selected-days"></canvas>
             </div>
@@ -106,8 +109,8 @@
       </div>
     </main>
   </body>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js" async></script>
-    <script src="scripts/main.js" async></script>
-    <script src="scripts/date-range-slider.js" async></script>
-    <script src="scripts/create-charts.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" async></script>
+  <script src="scripts/main.js" async></script>
+  <script src="scripts/date-range-slider.js" async></script>
+  <script src="scripts/create-charts.js" async></script>
 </html>
