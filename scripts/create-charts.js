@@ -96,6 +96,7 @@ async function createMovingAverageChart() {
         borderCapStyle: 'round',
         borderDash: [5],
         // borderWidth: 0,
+        pointStyle: false,
         // pointRadius: 2,
         },
       {
@@ -107,6 +108,7 @@ async function createMovingAverageChart() {
         borderCapStyle: 'round',
         borderDash: [5],
         // borderWidth: 0,
+        pointStyle: false,
         // pointRadius: 2,
         }
     ]
@@ -302,4 +304,5 @@ createMovingAverageChart();
 createTradingVolumeChart();
 createTopWorstChart(last_30_days);
 createTopWorstChart(last_7_days);
+
 createTopWorstChart(selected_days);
