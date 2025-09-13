@@ -26,7 +26,7 @@ function getLastUpdate() {
   );
 }
 
-function controlstartDate(fromSlider, startDate, endDate, controlSlider) {
+function controlStartDate(fromSlider, startDate, endDate, controlSlider) {
 
   const [from, to] = getParsed(startDate, endDate);
   fillSlider(startDate, endDate, sliderColor, rangeColor, controlSlider);
@@ -38,7 +38,7 @@ function controlstartDate(fromSlider, startDate, endDate, controlSlider) {
   }
 }
     
-function controlendDate(toSlider, startDate, endDate, controlSlider) {
+function controlEndDate(toSlider, startDate, endDate, controlSlider) {
 
   const [from, to] = getParsed(startDate, endDate);
   fillSlider(startDate, endDate, sliderColor, rangeColor, controlSlider);
