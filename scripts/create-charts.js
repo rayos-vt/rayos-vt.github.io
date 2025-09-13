@@ -76,36 +76,38 @@ async function createMovingAverageChart() {
     data: {
       labels: label_count,
       datasets: [
-        {
+      {
         label: 'Stock Prices',
-        data: label_count.map((num) => (Math.random() * num)),
+        data: label_count.map((num) => (Math.random() * ((num / 2)**1.5))),
         yAxisID: 'y',
         xAxisID: 'x',
-        // pointStyle: false,
+        pointStyle: false,
         borderColor: 'rgb(255, 255, 255)',
         backgroundColor: 'rgb(255, 255, 255)',
         borderJoinStyle: 'round',
         borderCapStyle: 'round',
         },
-        {
+      {
         label: '30D MA',
-        data: label_count.map((num) => (Math.random() * num)),
-        // pointStyle: false,
+        data: label_count.map((num) => (Math.random() * ((num / 2)**1.5))),
         borderColor: 'rgb(148, 86, 199)',
         backgroundColor: 'rgb(148, 86, 199)',
         borderJoinStyle: 'round',
         borderCapStyle: 'round',
         borderDash: [5],
+        // borderWidth: 0,
+        // pointRadius: 2,
         },
-        {
+      {
         label: '90D MA',
-        data: label_count.map((num) => (Math.random() * num)),
-        // pointStyle: false,
+        data: label_count.map((num) => (Math.random() * ((num / 2)**1.5))),
         borderColor: 'rgb(250, 69, 69)',
         backgroundColor: 'rgb(250, 69, 69)',
         borderJoinStyle: 'round',
         borderCapStyle: 'round',
         borderDash: [5],
+        // borderWidth: 0,
+        // pointRadius: 2,
         }
     ]
     },
