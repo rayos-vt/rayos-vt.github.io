@@ -52,18 +52,25 @@ async function createStockTableChart() {
     var rows = '';
     // return;
     for (let step = 0; step < symbols.length; step++) {
-        
-        rows += (
-            '<tr>' +
-            '<th scope="row">' + symbols[step] + '</th>' +
-            '<td>' + (Math.random() * 100000).toFixed(2) + '</td>' + 
-            '<td>' + (Math.random() * 100000).toFixed(2) + '</td>' + 
-            '<td>' + (Math.random() * 100000).toFixed(2) + '</td>' +
-            '<td>' + (Math.random() * 100).toFixed(2) + '</td>' +
-            '<td>' + (Math.random() * 100000).toFixed(2) + '</td>' + 
-            '<td>' + (Math.random() * 100000).toFixed(2) + '</td>' +
-            '</tr>'
-        );
+      
+      last_price = (Math.random() * 100000)
+      previous_price = (Math.random() * 100000)
+      price_change = last_price - previous_price;
+      percent_change = last_price / previous_price;
+      max_price= (Math.random() * 100000)
+      low_price= (Math.random() * 100000)
+
+      rows += (
+          '<tr>' +
+          '<th scope="row">' + symbols[step] + '</th>' +
+          '<td>' + last_price.toLocaleString('en-US', {maximumFractionDigits: 2}) + '</td>' + 
+          '<td>' + previous_price.toLocaleString('en-US', {maximumFractionDigits: 2}) + '</td>' + 
+          '<td>' + price_change.toLocaleString('en-US', {maximumFractionDigits: 2}) + '</td>' +
+          '<td>' + percent_change.toLocaleString('en-US', {maximumFractionDigits: 2}) + '%</td>' +
+          '<td>' + max_price.toLocaleString('en-US', {maximumFractionDigits: 2}) + '</td>' + 
+          '<td>' + low_price.toLocaleString('en-US', {maximumFractionDigits: 2}) + '</td>' +
+          '</tr>'
+      );
     }
     
     stock_table_tbody.innerHTML = rows;
@@ -306,3 +313,4 @@ createTopWorstChart(last_30_days);
 createTopWorstChart(last_7_days);
 
 createTopWorstChart(selected_days);
+
