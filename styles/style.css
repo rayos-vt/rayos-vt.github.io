@@ -1,5 +1,5 @@
 html {
-  background-color: #ff6a83;
+  background-color: #b92840;
   font-family: "Segoe UI", wf_segoe-ui_normal, helvetica, arial, sans-serif;
   height: 100vh;
   box-sizing: border-box;
@@ -74,38 +74,46 @@ main {
 }
 
 #stock-table {
-  height: 650px;
+  height: 66vh;
   overflow-y: auto;
   padding: 10px;
+  border: solid;
+  scrollbar-color: #5c5557 #cfb9c4;
 }
 
 table {
   display: block; 
   width: 100%;
   border-collapse: collapse;
-  border-top: 1px solid #999;
-  border-bottom: 1px solid #999;
   background-color: #ff6680;
+  margin: 0px;
   text-align: left;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 thead {
-  border-bottom: solid 2px;
+  border-bottom: solid 2px #999;
 }
-tbody {
-  border-bottom: solid 2px;
+
+tr {
+  padding: 0px;
 }
 
 th, td {
+  width: 50vw;
   vertical-align: top;
-  padding: 0.6em;
   border: solid 1px #6d0721;
+}
+
+th {
+  padding: 0.6em;
 }
 
 td {
   background-color: #6d0721;
-  text-align: right;
+  padding: 0px;
+  text-align: center;
+  font-size: 13px;
 }
 
 /* Main content of right/bottom side of page */
@@ -160,9 +168,11 @@ td {
 
 .day-average {
   flex-grow: 1;
+  overflow-y: auto;
   min-height: inherit;
   height: 200px;
   width: 200px;
+  scrollbar-color: #5c5557 #cfb9c4;
 }
 
 /* Footer content of page */
@@ -228,4 +238,5 @@ footer {
   .icon {
     height: 1vh;
   }
+
 }
