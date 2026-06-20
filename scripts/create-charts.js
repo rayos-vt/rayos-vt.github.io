@@ -39,7 +39,10 @@ const symbols = [
   "NMN",
   "HSH",
   "KMR",
-  "ERF"
+  "ERF",
+  "CYJ",
+  "KGE",
+  "RNF"
   ];
 var label_count = Array.from({length: 200}, (x, i) => i);
 
