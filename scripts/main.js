@@ -35,7 +35,10 @@ function setTickerSymbol() {
     "NMN",
     "HSH",
     "KMR",
-    "ERF"
+    "ERF",
+    "CYJ",
+    "KGE",
+    "RNF"
     ];
   var ticker = symbols[Math.floor(Math.random() * symbols.length)];
   document.getElementById("ticker-symbol").innerHTML = ticker;
