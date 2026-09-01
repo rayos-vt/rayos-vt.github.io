@@ -59,10 +59,10 @@ const symbols = [
   ];
 var label_count = Array.from({length: 200}, (x, i) => i);
 
-(async function createStockIndexChart() {
+async function createStockIndexChart() {
 
     var rows = '';
-    // return;
+  
     for (let step = 0; step < index.length; step++) {
       
       last_price = (Math.random() * 100000)
@@ -91,7 +91,7 @@ var label_count = Array.from({length: 200}, (x, i) => i);
 async function createStockTableChart() {
     
     var rows = '';
-    // return;
+  
     for (let step = 0; step < symbols.length; step++) {
       
       last_price = (Math.random() * 100000)
