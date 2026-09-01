@@ -69,8 +69,11 @@ main {
   text-align: center;
 }
 
-#stock-index {
+#index-table {
+  height: 33vh;
+  overflow-y: auto;
   padding: 10px;
+  scrollbar-color: #5c5557 #cfb9c4;
 }
 
 #stock-table {
