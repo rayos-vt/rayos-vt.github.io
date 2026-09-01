@@ -347,11 +347,10 @@ async function createTopWorstChart(chart_id) {
   });
 };
 
+createStockIndexChart();
 createStockTableChart();
 createMovingAverageChart();
 createTradingVolumeChart();
 createTopWorstChart(last_30_days);
 createTopWorstChart(last_7_days);
-
 createTopWorstChart(selected_days);
-
