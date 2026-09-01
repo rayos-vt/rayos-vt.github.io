@@ -1,9 +1,22 @@
+const stock_index_tbody = document.getElementById("stock-index-tbody");
 const stock_table_tbody = document.getElementById("stock-table-tbody");
 const moving_average_chart = document.getElementById("moving-average-chart");
 const trading_volume_chart = document.getElementById("trading-volume-chart");
 const last_30_days = document.getElementById("last-30-days");
 const last_7_days = document.getElementById("last-7-days");
 const selected_days = document.getElementById("selected-days");
+const index = [
+  "KKM",
+  "HMRE",
+  "MNUH",
+  "KMH",
+  "MM",
+  "HCKK",
+  "NMKH",
+  "CME",
+  "IMS",
+  "HYC"
+  ];
 const symbols = [
   "RNT",
   "HKR",
@@ -48,7 +61,32 @@ var label_count = Array.from({length: 200}, (x, i) => i);
 
 (async function createStockIndexChart() {
 
-})();
+    var rows = '';
+    // return;
+    for (let step = 0; step < index.length; step++) {
+      
+      last_price = (Math.random() * 100000)
+      previous_price = (Math.random() * 100000)
+      price_change = last_price - previous_price;
+      percent_change = last_price / previous_price;
+      max_price= (Math.random() * 100000)
+      low_price= (Math.random() * 100000)
+
+      rows += (
+          '<tr>' +
+          '<th scope="row">' + index[step] + '</th>' +
+          '<td>' + last_price.toLocaleString('en-US', {maximumFractionDigits: 2}) + '</td>' + 
+          '<td>' + previous_price.toLocaleString('en-US', {maximumFractionDigits: 2}) + '</td>' + 
+          '<td>' + price_change.toLocaleString('en-US', {maximumFractionDigits: 2}) + '</td>' +
+          '<td>' + percent_change.toLocaleString('en-US', {maximumFractionDigits: 2}) + '%</td>' +
+          '<td>' + max_price.toLocaleString('en-US', {maximumFractionDigits: 2}) + '</td>' + 
+          '<td>' + low_price.toLocaleString('en-US', {maximumFractionDigits: 2}) + '</td>' +
+          '</tr>'
+      );
+    }
+    
+    stock_index_tbody.innerHTML = rows;
+};
 
 async function createStockTableChart() {
     
